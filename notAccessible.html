@@ -10,19 +10,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <title>Empathy lab Accessible demo</title>
+    <title>Empathy lab Inaccessible demo</title>
+    <style>
+      a {
+        outline: none;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <a href="#main" class="skip-to-main-content-link">Skip to main content</a>
-      <img src="./img/broomfieldLogo.png" alt="Broomfield logo" />
+    <header role="presentation">
+      <img src="./img/broomfieldLogo.png" alt="logo" />
         <div class="menu-button__container">
           <button aria-expanded="false" aria-controls="mainNavigation">Menu
             <img src="./img/menu.png" alt="">
           </button>
         </div>
-      <nav id="mainNavigation">
-        <ul>
+      <nav id="mainNavigation" role="presentation">
+        <ul role="presentation">
           <li><a href="#introduction">Introduction to web accessibility</a></li>
           <li><a href="#what">What is the Web accessibility</a></li>
           <li><a href="#benefits">Benefits of accessibility</a></li>
@@ -31,28 +35,28 @@
         </ul>
       </nav>
     </header>
-    <main id="main">
+    <main id="main" role="presentation">
       <section class="hero-container">
         <div class="hero-content">
-          <h1>Empathy lab</h1>
+          <h1 role="presentation">Empathy lab</h1>
           <p>
-           This is an example about how an accessible website should work with keyboard and screen reader navigation. 
+           This is an example about how a non accessible website work with keyboard and screen reader navigation. 
           </p>
           <div class="hero-links">
           <a href="#introduction" class="cta-primary">Get started</a>
-          <a href="notAccessible.html" class="cta-secondary">Non accessible version</a>
+          <a href="index.html" class="cta-secondary">Accessible version</a>
           </div>
         </div>
         <div class="hero-image">
-          <img src="./img/hero.png" alt="" />
+          <img src="./img/hero.png" alt="random image" />
         </div>
       </section>
       <section class="main-container">
         <div class="info-container">
           <div class="info-image-container">
-            <img src="./img/intro.png" alt="" />
+            <img src="./img/intro.png" alt="photo" />
           </div>
-          <div class="info-content" id="introduction" tabindex="-1">
+          <div class="info-content" id="introduction">
             <h2>Introduction to Web Accessibility</h2>
             <p>
               When websites and web tools are properly designed and coded,
@@ -66,8 +70,8 @@
           </div>
         </div>
         <div class="info-container">
-          <div class="info-content" id="what" tabindex="-1">
-            <h2>What is Web Accessibility?</h2>
+          <div class="info-content" id="what">
+            <h2 role="presentation">What is Web Accessibility?</h2>
             <p>
               Web accessibility means that websites, tools, and technologies are
               designed and developed so that people with disabilities can use
@@ -79,15 +83,15 @@
             </p>
           </div>
           <div class="info-image-container">
-            <img src="./img/what.png" alt="" />
+            <img src="./img/what.png" alt="what" />
           </div>
         </div>
         <div class="info-container">
           <div class="info-image-container">
-            <img src="./img/benefits.png" alt="" />
+            <img src="./img/benefits.png" alt="benefits" />
           </div>
-          <div class="info-content" id="benefits" tabindex="-1">
-            <h2>Benefits of Accessibility</h2>
+          <div class="info-content" id="benefits">
+            <h2 role="presentation">Benefits of Accessibility</h2>
             <p>
               Web accessibility also benefits people without disabilities, for
               example: people using mobile phones, smart watches, smart TVs, and
@@ -102,13 +106,13 @@
           </div>
         </div>
       </section>
-      <section class="faq-container" id="faq" tabindex="-1">
-        <h2>Frequently asked questions</h2>
+      <section class="faq-container" id="faq">
+        <h2 role="presentation">Frequently asked questions</h2>
         <div class="accordions">
-          <h3>
-            <button class="accordion-header" aria-expanded="false" aria-controls="accordionContent1">
+          <h3 role="presentation">
+            <button role="link" class="accordion-header">
             How many people are affected by accessibility?
-              <img src="./img/plus.png" alt="" />
+              <img src="./img/plus.png" alt="plus" />
             </button>
           </h3>
           <div id="accordionContent1">
@@ -119,10 +123,10 @@
               education, and more.
             </p>
           </div>
-            <h3>
-            <button class="accordion-header" aria-expanded="false" aria-controls="accordionContent2">
+            <h3 role="presentation">
+            <button class="accordion-header" role="link">
               <div>How tables work with a screen reader?</div>
-              <img src="./img/plus.png" alt="" />
+              <img src="./img/plus.png" alt="plus" />
             </button>
             </h3>
             <div id="accordionContent2">
@@ -139,26 +143,26 @@
                 experience where everyone, regardless of abilities, can
                 understand and engage with the content effortlessly.
               </p>
-            <table border="1">
-              <tr>
+            <table border="1" role="presentation">
+              <tr role="presentation">
                 <th scope="col">Name</th>
                 <th scope="col">Phone#</th>
                 <th scope="col">Fax#</th>
                 <th scope="col">City</th>
               </tr>
-              <tr>
+              <tr role="presentation">
                 <td>Joel Garner</th>
                 <td>412-212-5421</td>
                 <td>412-212-5400</td>
                 <td>Pittsburgh</td>
               </tr>
-              <tr>
+              <tr role="presentation">
                 <td>Clive Lloyd</th>
                 <td>410-306-1420</td>
                 <td>410-306-5400</td>
                 <td>Baltimore</td>
               </tr>
-              <tr>
+              <tr role="presentation">
                 <td>Gordon Greenidge</th>
                 <td>281-564-6720</td>
                 <td>281-511-6600</td>
@@ -166,10 +170,10 @@
               </tr>
             </table>
             </div>
-            <h3>
-            <button class="accordion-header" aria-expanded="false" aria-controls="accordionContent3">
+            <h3 role="presentation">
+            <button class="accordion-header" role="link">
               <div>What is an assistive technology?</div>
-              <img src="./img/plus.png" alt="" />
+              <img src="./img/plus.png" alt="plus" />
             </button>
             </h3>
             <div id="accordionContent3">
@@ -191,14 +195,14 @@
               education, employment, and daily life.
             </p>
             </div>
-            <h3>
-            <button class="accordion-header" aria-expanded="false" aria-controls="accordionContent4">
+            <h3 role="presentation">
+            <button class="accordion-header" role="link">
               <div>How can we help?</div>
-              <img src="./img/plus.png" alt="" />
+              <img src="./img/plus.png" alt="plus" />
             </button>
             </h3>
             <div id="accordionContent4">
-              <ul>
+              <ul role="presentation">
   <li><strong>Education and Awareness:</strong> All Employees should foster awareness and understanding of accessibility principles. Provide training sessions or resources on creating inclusive content, designing accessible interfaces, and considering diverse user needs.</li>
 
   <li><strong>Inclusive Communication:</strong> All Employees should use clear and concise language in written and verbal communication. Provide alternative formats for important information, such as meeting agendas, to accommodate diverse needs.</li>
@@ -218,7 +222,7 @@
         </div>
       </section>
     </main>
-    <footer id="contact" tabindex="-1">
+    <footer id="contact" role="presentation">
       <img src="./img/broomfield-footer.png" alt="broomfield logo" />
       <div class="footer-content">
         <h2>Contact Us</h2>
@@ -228,21 +232,21 @@
       </div>
       <ul>
         <li>
-          <a href="#"><img src="./img/social/facebook.png" alt="facebook" /></a>
+          <a href="#"><img src="./img/social/facebook.png" alt="social" /></a>
         </li>
         <li>
           <a href="#">
-            <img src="./img/social/instagram.png" alt="instagram" />
+            <img src="./img/social/instagram.png" alt="social" />
           </a>
         </li>
         <li>
-          <a href="#"><img src="./img/social/twitter.png" alt="twitter" /></a>
+          <a href="#"><img src="./img/social/twitter.png" alt="social" /></a>
         </li>
         <li>
-          <a href="#"><img src="./img/social/youtube.png" alt="youtube" /></a>
+          <a href="#"><img src="./img/social/youtube.png" alt="social" /></a>
         </li>
         <li>
-          <a href="#"><img src="./img/social/linkedin.png" alt="linkedin" /></a>
+          <a href="#"><img src="./img/social/linkedin.png" alt="social" /></a>
         </li>
       </ul>
     </footer>
@@ -253,24 +257,31 @@
     const menuButton = document.querySelector('.menu-button__container button')
     const menuContent = document.querySelector('header nav')
     const mainNavigation = document.querySelector('#mainNavigation')
-    let isMenuButtonExpanded = mainNavigation.getAttribute('aria-expanded') === "false"
+    let isMenuButtonExpanded = false 
 
     menuButton.addEventListener('click', function () {
       menuContent.style.display =  isMenuButtonExpanded ? 'none' : 'block' 
       isMenuButtonExpanded = !isMenuButtonExpanded
-      menuButton.setAttribute('aria-expanded', isMenuButtonExpanded)
       console.log(mainNavigation)
       console.log(isMenuButtonExpanded)
 
 
     })
 
+    function isElementHidden(element) {
+      // Get the computed style of the element
+      var style = window.getComputedStyle(element);
+
+      // Check if the display property is set to "none"
+      return style.display === 'none';
+    }
+
     accordionHeaders.forEach(header => {
       header.addEventListener('click', function () {
-        const isExpanded = header.getAttribute('aria-expanded') === "false"
         const accordionContent = document.getElementById(header.parentElement.nextElementSibling.id)
+        const isExpanded = isElementHidden(accordionContent)
+        console.log(isExpanded)
         accordionContent.style.display = !isExpanded ? "none" : "block"
-        header.setAttribute('aria-expanded', isExpanded)
       });
     });
   });
